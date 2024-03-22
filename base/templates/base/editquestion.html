@@ -1,0 +1,35 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<div class="text-center">
+  <form method="POST" action="" enctype="multipart/form-data" class="question-form">
+    {% csrf_token %}
+    <div>
+      <h3>Redigera fråga</h3>
+      <hr>
+    </div>
+    <div>
+        <div>
+            {{ form.question }}
+            <br>
+        </div>
+        <div>
+            {{ form.answer }}
+            <br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            {{ form.image }}
+        </div>
+        <div class="col-md-6">
+            {{ form.image_width }}
+        </div>
+    </div>
+    <br>
+
+      <button type="submit" class="btn btn-primary">Spara</button>
+</form>
+</div>
+
+{% endblock %}

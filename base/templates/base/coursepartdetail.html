@@ -1,0 +1,34 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<!-- Breadcrumbs -->
+{% include 'base/breadcrumb.html' %}
+<!-- End Breadcrumbs -->
+
+<br>
+<br>
+
+<h3 class="text-center">{{ course_part }}</h5>
+<hr>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Namn</th>
+        <th>Antal frågor</th>
+    </tr>
+    {% for cpf in coursepartfragments %}
+    <tr>
+        <td>
+            <a class="hover-underline-animation button-link" style="--bs-link-hover-color-rgb: 25, 135, 84;" href="{% url 'base:question-list' course.slug course_part.slug cpf.slug %}">
+                {{ cpf }}
+            </a>
+        </td>
+        <td>
+            {{ cpf.total_question_count }}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

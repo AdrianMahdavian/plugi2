@@ -1,0 +1,121 @@
+{% load bootstrap5 %}
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Plugi</title>
+    
+    
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    
+    <link href="{% static 'style.css' %}" rel="stylesheet" media="screen">
+
+    
+
+  </head>
+
+  <body class="d-flex flex-column h-100">
+    {% for message in messages %}
+        <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert" >
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+            </button>
+            {{ message }}
+        </div>
+    {% endfor %}
+
+
+    {% include 'navbar.html' %}
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            <!-- Header-->
+            <header class="py-5">
+                <div class="container px-5" style="padding-bottom: 7em; padding-top: 5em;">
+                    <div class="">
+                        <div class="">
+                            <div class="my-5 text-center text-xl-start">
+                                <h1 class="display-5 fw-bolder text-black mb-2 text-center">Att få bra betyg ska vara enkelt</h1>
+                                <p class="lead fw-normal text-black mb-4 text-center">Plugi är en kostnadsfri frågebank för gymnasiets biologi och kemi </p>
+                                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-center">
+                                    <a class="btn btn-primary btn-lg px-4 me-sm-3 " href="{% url 'base:course-list' %}">Kom igång</a>
+                                    <a class="btn btn-outline-dark btn-lg px-4" href="#funktioner">Läs mer</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                </div>
+            </header>
+
+            <section class="py-5 bg-light" id="funktioner">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 align-items-center">
+                        <div class="col-lg-6"><img class="img-fluid rounded mb-5 mb-lg-0" src="https://plugi.ams3.digitaloceanspaces.com/static/index-images/cpf-list.png" alt="..." /></div>
+                        <div class="col-lg-6">
+                            <h2 class="fw-bolder">Vad är Plugi?</h2>
+                            <p class="lead fw-normal text-muted mb-0">Plugi är en kostnadsfri frågebank för gymnasiekurser som strävar efter att underlätta inlärning. 
+                                Vi tror på att lärande är en process som bygger på tre viktiga delar: förståelse, memorisering och tillämpning. 
+                                Hos Plugi fokuserar vi på att stötta dig genom den andra delen – memorisering. 
+                                Vi använder oss av beprövade studiemetoder såsom testmetoden och spaced repetition som har visat sig vara effektiva verktyg för att förbättra inlärningsprocessen."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About section two-->
+            <section class="py-5">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 align-items-center">
+                        <div class="col-lg-6 order-first order-lg-last"><img class="img-fluid rounded mb-5 mb-lg-0" src="https://plugi.ams3.digitaloceanspaces.com/static/images/Ska%CC%88rmavbild%202023-07-11%20kl.%2023.19.04.png" alt="..." /></div>
+                        <div class="col-lg-6">
+                            <h2 class="fw-bolder">Hur använder man Plugi?</h2>
+                            <p class="lead fw-normal text-muted mb-0">Denna metod, som kallas testbaserat lärande, fokuserar på att aktivt återkalla information från minnet istället för att passivt läsa eller lyssna på den. 
+                                Försök besvara frågan utan att kolla på svaret!
+                                Genom att göra detta utmanar du ditt minne och stärker dina kopplingar till det material du försöker lära dig. 
+                                Om du inte kan komma ihåg svaret är det helt okej – det är ju trots allt en del av inlärningsprocessen. 
+                                Genom att sedan granska svaret och försöka igen efter en stund får du möjlighet att förstärka minnet ytterligare och förbättra din förmåga att komma ihåg informationen nästa gång. 
+                                På så sätt blir det en kontinuerlig cykel av utmaning, reflektion och förbättring som leder till långsiktig inlärning och förståelse.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        
+
+            <section>
+                <div class="py-5 bg-light">
+                    <div class="container px-5 my-5">
+                        <div class="row gx-5 justify-content-center">
+                            <div class="col-lg-10 col-xl-7">
+                                <div class="text-center">
+                                    <h4>Byggt av elever för elever</h4>
+                                    <div class="fs-4 mb-4">Vi förstår de verkliga utmaningarna som elever står inför när det gäller inlärning. 
+                                        Plugi är utformat för att förenkla dina studier, inte göra dem mer komplicerade. 
+                                        Vi är här för att stödja dig på din inlärningsresa och göra det möjligt för dig att nå dina mål på ett smidigt sätt. 
+                                        Kom och upptäck plugi, den plattform som är skapad av elever, för elever. 
+                                        Tillsammans kan vi göra studierna enklare och mer givande. 
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Testimonial section-->
+            
+           
+        </main>
+      
+    </body>
+   
+
+
+    
+  
+    
+
+

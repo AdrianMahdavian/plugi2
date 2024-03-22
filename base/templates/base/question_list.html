@@ -1,0 +1,43 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<!-- Breadcrumbs -->
+{% include 'base/breadcrumb.html' %}
+<!-- End Breadcrumbs -->
+
+<style> 
+/* Add your custom styles here */
+</style>
+
+<h3 class="text-center">{{ cpf }}</h3>
+<hr>
+
+<div hx-trigger="load, questionListChanged from:body">
+  {% for question in questions %}
+    <div class="question-container" id="question-{{ question.id }}">
+      <details class="{% if question.id == question_id %}open{% endif %}">
+        <summary>
+          <div>
+            {{ question.question }} 
+          </div>
+        </summary>
+        <p style="padding-left: 2em;">{{ question.answer }}</p>
+        {% if question.image %}
+          <img src="{{ question.image.url }}" class="" alt="..." 
+            style="width: {{ question.image_width }}%; 
+            height: auto; 
+            object-fit: cover; 
+            padding-left: 2em; 
+            padding-bottom: 2em;"> 
+        {% endif %}
+        
+        {% if request.user.is_superuser %}
+        <a href="{% url 'base:edit-question' question.pk %}" class="btn btn-dark" style="margin-left: 2em; margin-bottom: 1em;">Ändra fråga</a>
+        {% endif %}
+      </details>
+    </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

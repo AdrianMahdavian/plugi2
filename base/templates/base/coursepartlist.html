@@ -1,0 +1,27 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+{% include 'base/breadcrumb.html' %}
+
+<h3 class="text-center">{{ course }}</h3>
+<hr>
+
+<div class="row">
+  {% for part in course_parts %}
+    <div class="col-lg-6 py-3 px-3">
+      <div class="card">
+        {% if part.image %}
+          <img src="{{ part.image.url }}" class="" alt="..." style="width: 100%; height: 240px; object-fit: cover;">
+        {% endif %}
+        <div class="card-body">
+          <h5 class="card-title text-center">
+            <a class="btn btn-dark mb-2" href="{% url 'base:course-part-detail' course.slug part.slug %}">{{ part }}</a>
+          </h5>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+{% endblock %}
